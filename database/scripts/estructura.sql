@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS Visita (
 CREATE TABLE IF NOT EXISTS Tratamiento (
     idTratamiento INT AUTO_INCREMENT,
     nombre VARCHAR(45) NOT NULL,
-    observaciones VARCHAR(100) NOT NULL,
+    observaciones VARCHAR(300) NOT NULL,
     idVisita INT NOT NULL,
     PRIMARY KEY (idTratamiento),
     FOREIGN KEY (idVisita) REFERENCES Visita(idVisita)
