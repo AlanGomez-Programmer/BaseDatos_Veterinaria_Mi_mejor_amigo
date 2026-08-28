@@ -8,7 +8,7 @@ USE Veterinaria_Mi_mejor_amigo;
 -- Datos Externos
 
 CREATE TABLE IF NOT EXISTS Cliente (
-    idCliente INT NOT NULL AUTO_INCREMENT,
+    idCliente INT AUTO_INCREMENT,
     cedula VARCHAR(10) UNIQUE NOT NULL,
     nombre_completo VARCHAR(45) NOT NULL,
     telefono VARCHAR(10) NOT NULL,
@@ -17,25 +17,25 @@ CREATE TABLE IF NOT EXISTS Cliente (
 );
 
 CREATE TABLE IF NOT EXISTS Especie (
-    idEspecie INT NOT NULL AUTO_INCREMENT,
+    idEspecie INT AUTO_INCREMENT,
     especie VARCHAR(45) NOT NULL,
     PRIMARY KEY (idEspecie)
 );
 
 CREATE TABLE IF NOT EXISTS Raza (
-    idRaza INT NOT NULL AUTO_INCREMENT,
+    idRaza INT AUTO_INCREMENT,
     raza VARCHAR(45) NOT NULL,
     PRIMARY KEY (idRaza)
 );
 
 CREATE TABLE IF NOT EXISTS Sexo (
-    idSexo INT NOT NULL AUTO_INCREMENT,
+    idSexo INT AUTO_INCREMENT,
     sexo VARCHAR(45) UNIQUE NOT NULL,
     PRIMARY KEY (idSexo)
 );
 
 CREATE TABLE IF NOT EXISTS Mascota (
-    idMascota INT NOT NULL AUTO_INCREMENT,
+    idMascota INT AUTO_INCREMENT,
     nombre VARCHAR(45) NOT NULL,
     vacunada BOOLEAN NOT NULL,
     idCliente INT NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS Mascota (
 -- Datos Internos
 
 CREATE TABLE IF NOT EXISTS Veterinario (
-    idVeterinario INT NOT NULL AUTO_INCREMENT,
+    idVeterinario INT AUTO_INCREMENT,
     cedula VARCHAR(10) UNIQUE NOT NULL,
     nombre_completo VARCHAR(45) NOT NULL,
     telefono VARCHAR(10) NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS Veterinario (
 );
 
 CREATE TABLE IF NOT EXISTS Servicio (
-    idServicio INT NOT NULL AUTO_INCREMENT,
+    idServicio INT AUTO_INCREMENT,
     nombre VARCHAR(45) NOT NULL,
     descripcion VARCHAR(100) NOT NULL,
     precio_base VARCHAR(45) NOT NULL,
@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS Servicio (
 );
 
 CREATE TABLE IF NOT EXISTS Visita (
-    idVisita INT NOT NULL AUTO_INCREMENT,
+    idVisita INT AUTO_INCREMENT,
     fecha DATE NOT NULL,
     idMascota INT NOT NULL,
     idVeterinario INT NOT NULL,
@@ -81,7 +81,7 @@ CREATE TABLE IF NOT EXISTS Visita (
 );
 
 CREATE TABLE IF NOT EXISTS Tratamiento (
-    idTratamiento INT NOT NULL AUTO_INCREMENT,
+    idTratamiento INT AUTO_INCREMENT,
     nombre VARCHAR(45) NOT NULL,
     observaciones VARCHAR(100) NOT NULL,
     idVisita INT NOT NULL,
